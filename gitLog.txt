@@ -1,0 +1,292 @@
+chrx@chrx:~$ mkdir gitSandBox
+chrx@chrx:~$ cd gitSandBox/
+chrx@chrx:~/gitSandBox$ ls -l
+total 0
+chrx@chrx:~/gitSandBox$ mkdir newRepo
+chrx@chrx:~/gitSandBox$ cd newRepo/
+chrx@chrx:~/gitSandBox/newRepo$ ls
+chrx@chrx:~/gitSandBox/newRepo$ ls -l
+total 0
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ ls -la
+total 8
+drwxrwxr-x 2 chrx chrx 4096 Mar 24 21:35 .
+drwxrwxr-x 3 chrx chrx 4096 Mar 24 21:35 ..
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git init
+Initialized empty Git repository in /home/chrx/gitSandBox/newRepo/.git/
+chrx@chrx:~/gitSandBox/newRepo$ ls -la
+total 12
+drwxrwxr-x 3 chrx chrx 4096 Mar 24 21:36 .
+drwxrwxr-x 3 chrx chrx 4096 Mar 24 21:35 ..
+drwxrwxr-x 7 chrx chrx 4096 Mar 24 21:36 .git
+chrx@chrx:~/gitSandBox/newRepo$ ls -la .git/
+total 40
+drwxrwxr-x 7 chrx chrx 4096 Mar 24 21:36 .
+drwxrwxr-x 3 chrx chrx 4096 Mar 24 21:36 ..
+drwxrwxr-x 2 chrx chrx 4096 Mar 24 21:36 branches
+-rwxrw-r-- 1 chrx chrx   92 Mar 24 21:36 config
+-rw-rw-r-- 1 chrx chrx   73 Mar 24 21:36 description
+-rw-rw-r-- 1 chrx chrx   23 Mar 24 21:36 HEAD
+drwxrwxr-x 2 chrx chrx 4096 Mar 24 21:36 hooks
+drwxrwxr-x 2 chrx chrx 4096 Mar 24 21:36 info
+drwxrwxr-x 4 chrx chrx 4096 Mar 24 21:36 objects
+drwxrwxr-x 4 chrx chrx 4096 Mar 24 21:36 refs
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+chrx@chrx:~/gitSandBox/newRepo$
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ touch newFile.txt
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	newFile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git add newFile.txt 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   newFile.txt
+
+chrx@chrx:~/gitSandBox/newRepo$ 
+
+
+
+
+
+####
+add all:
+You can also type git add -A . where the dot stands for the current directory, so everything in and beneath it is added. The -A ensures even file deletions are included.
+git reset:
+You can use git reset <filename> to remove a file or files from the staging area.
+####
+####
+
+
+chrx@chrx:~/gitSandBox/newRepo$ git commit -m "Added a new file"
+[master (root-commit) 959fcc1] Added a new file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newFile.txt
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git status
+On branch master
+nothing to commit, working directory clean
+chrx@chrx:~/gitSandBox/newRepo$ 
+
+
+
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git log
+commit 959fcc1eec7fa062061c82ad566ba2fff4956861
+Author: Thomas Chan <cs_lab@hotmail.com>
+Date:   Thu Mar 24 21:50:13 2016 -0600
+
+    Added a new file
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ ls -l
+total 0
+-rw-rw-r-- 1 chrx chrx 0 Mar 24 21:43 newFile.txt
+chrx@chrx:~/gitSandBox/newRepo$ touch foo.txt
+chrx@chrx:~/gitSandBox/newRepo$ touch index.html
+chrx@chrx:~/gitSandBox/newRepo$ touch readme.txt
+chrx@chrx:~/gitSandBox/newRepo$ mkdir src
+chrx@chrx:~/gitSandBox/newRepo$ touch src/code.txt
+chrx@chrx:~/gitSandBox/newRepo$ touch src/init.txt
+chrx@chrx:~/gitSandBox/newRepo$ touch src/info.html
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	foo.txt
+	index.html
+	readme.txt
+	src/
+
+nothing added to commit but untracked files present (use "git add" to track)
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git add "*.txt"
+chrx@chrx:~/gitSandBox/newRepo$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   foo.txt
+	new file:   readme.txt
+	new file:   src/code.txt
+	new file:   src/init.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	index.html
+	src/info.html
+
+chrx@chrx:~/gitSandBox/newRepo$ git commit -m "Added more txt files"
+[master 1db9fc7] Added more txt files
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 foo.txt
+ create mode 100644 readme.txt
+ create mode 100644 src/code.txt
+ create mode 100644 src/init.txt
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git add "*.html"
+chrx@chrx:~/gitSandBox/newRepo$ git commit -m "Added all html files"
+[master e2020ea] Added all html files
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+ create mode 100644 src/info.html
+chrx@chrx:~/gitSandBox/newRepo$ git status
+On branch master
+nothing to commit, working directory clean
+chrx@chrx:~/gitSandBox/newRepo$ 
+
+
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git log
+commit e2020ea3f1a5d52005982ac119506f01e563f819
+Author: Thomas Chan <cs_lab@hotmail.com>
+Date:   Thu Mar 24 22:00:47 2016 -0600
+
+    Added all html files
+
+commit 1db9fc734a29a55e476d45b8cb85c2ba38996c51
+Author: Thomas Chan <cs_lab@hotmail.com>
+Date:   Thu Mar 24 22:00:03 2016 -0600
+
+    Added more txt files
+
+commit 959fcc1eec7fa062061c82ad566ba2fff4956861
+Author: Thomas Chan <cs_lab@hotmail.com>
+Date:   Thu Mar 24 21:50:13 2016 -0600
+
+    Added a new file
+chrx@chrx:~/gitSandBox/newRepo$
+
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ ls -la
+total 16
+drwxrwxr-x 4 chrx chrx 4096 Mar 24 21:55 .
+drwxrwxr-x 3 chrx chrx 4096 Mar 24 21:35 ..
+-rw-rw-r-- 1 chrx chrx    0 Mar 24 21:54 foo.txt
+drwxrwxr-x 8 chrx chrx 4096 Mar 24 22:01 .git
+-rw-rw-r-- 1 chrx chrx    0 Mar 24 21:54 index.html
+-rw-rw-r-- 1 chrx chrx    0 Mar 24 21:43 newFile.txt
+-rw-rw-r-- 1 chrx chrx    0 Mar 24 21:55 readme.txt
+drwxrwxr-x 2 chrx chrx 4096 Mar 24 21:56 src
+
+
+chrx@chrx:~/gitSandBox/newRepo$ nano .gitignore
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ touch error.log
+chrx@chrx:~/gitSandBox/newRepo$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git add .
+chrx@chrx:~/gitSandBox/newRepo$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   .gitignore
+
+chrx@chrx:~/gitSandBox/newRepo$ ls -l
+total 4
+-rw-rw-r-- 1 chrx chrx    0 Mar 24 22:05 error.log
+-rw-rw-r-- 1 chrx chrx    0 Mar 24 21:54 foo.txt
+-rw-rw-r-- 1 chrx chrx    0 Mar 24 21:54 index.html
+-rw-rw-r-- 1 chrx chrx    0 Mar 24 21:43 newFile.txt
+-rw-rw-r-- 1 chrx chrx    0 Mar 24 21:55 readme.txt
+drwxrwxr-x 2 chrx chrx 4096 Mar 24 21:56 src
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git commit -m "Added the .gitignore file"
+[master 4765d80] Added the .gitignore file
+ 1 file changed, 38 insertions(+)
+ create mode 100644 .gitignore
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git status
+On branch master
+nothing to commit, working directory clean
+chrx@chrx:~/gitSandBox/newRepo$ 
+chrx@chrx:~/gitSandBox/newRepo$ git log
+commit 4765d805ec1d17461157d456da4a614844a9ed0e
+Author: Thomas Chan <cs_lab@hotmail.com>
+Date:   Thu Mar 24 22:09:15 2016 -0600
+
+    Added the .gitignore file
+
+commit e2020ea3f1a5d52005982ac119506f01e563f819
+Author: Thomas Chan <cs_lab@hotmail.com>
+Date:   Thu Mar 24 22:00:47 2016 -0600
+
+    Added all html files
+
+commit 1db9fc734a29a55e476d45b8cb85c2ba38996c51
+Author: Thomas Chan <cs_lab@hotmail.com>
+Date:   Thu Mar 24 22:00:03 2016 -0600
+
+    Added more txt files
+
+commit 959fcc1eec7fa062061c82ad566ba2fff4956861
+Author: Thomas Chan <cs_lab@hotmail.com>
+Date:   Thu Mar 24 21:50:13 2016 -0600
+
+    Added a new file
+chrx@chrx:~/gitSandBox/newRepo$ 
+
+
+git remote add origin https://github.com/myoldprojects/CLIgit.git
+
+git remote add origin remote repository URL
+# Sets the new remote
+git remote -v
+# Verifies the new remote URL
+
+
+git push origin master
+# Pushes the changes in your local repository up to the remote repository you specified as the origin
+
+
+A
+
